@@ -1,0 +1,16 @@
+@import url("./styles/_font.scss");
+@import url("./styles/_colors.scss");
+@import url("./styles/_animations.scss");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Space Mono, sans-serif;
+  transition: background-color 250ms ease-out, color 250ms ease-out, fill 250ms ease-out;
+}
+
+body {
+  background-color: var(--background-color);
+  min-width: 325px;
+}
