@@ -1,0 +1,9 @@
+.spinner {
+  width: 60px;
+  height: 60px;
+  border-left: 3px dotted var(--blue-primary);
+  animation: spinning 900ms infinite, fade-in 500ms ease-out;
+  border-radius: 100%;
+  margin-inline: auto;
+  margin-top: 50px;
+}

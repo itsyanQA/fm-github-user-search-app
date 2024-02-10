@@ -1,0 +1,16 @@
+@use "../../../../styles/mixins" as *;
+
+.user-extra-info {
+  display: flex;
+  padding: 10.5px 30px;
+  background-color: var(--background-color);
+  border-radius: 13px;
+  width: 100%;
+  gap: 97px;
+
+  @include for-phone-only {
+    gap: unset;
+    justify-content: space-between;
+    padding: 20.5px 30px;
+  }
+}

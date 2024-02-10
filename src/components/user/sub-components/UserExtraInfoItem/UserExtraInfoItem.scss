@@ -1,0 +1,30 @@
+@use "../../../../styles/mixins" as *;
+
+.user-extra-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  @include for-phone-only {
+    align-items: center;
+  }
+
+  &__label {
+    color: var(--text-color-2);
+    text-transform: capitalize;
+
+    @include for-phone-only {
+      font-size: 11px;
+    }
+  }
+
+  &__info {
+    color: var(--text-color-3);
+    font-size: 22px;
+    font-weight: bold;
+
+    @include for-phone-only {
+      font-size: 16px;
+    }
+  }
+}

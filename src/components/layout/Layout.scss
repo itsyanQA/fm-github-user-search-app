@@ -1,0 +1,21 @@
+@use "../../styles/mixins" as *;
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 730px;
+  margin: 140px auto;
+  animation: fade-in 250ms ease-out;
+
+  @include for-tablet-only {
+    max-width: 573px;
+  }
+
+  @include for-phone-only {
+    max-width: unset;
+    padding-inline: 29px;
+    gap: 16px;
+    margin-top: 42px;
+  }
+}

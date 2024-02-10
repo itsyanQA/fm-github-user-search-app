@@ -1,0 +1,30 @@
+@use "../../styles/mixins" as *;
+
+.theme {
+  display: flex;
+  align-items: center;
+  gap: 13.27px;
+  cursor: pointer;
+
+  &:hover {
+    .theme__text {
+      color: var(--button-hover);
+    }
+
+    & g,
+    & path {
+      fill: var(--button-hover);
+    }
+  }
+
+  &__text {
+    @include body;
+    color: var(--text-color-1);
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+
+    @include for-tablet-down {
+      font-size: 13px;
+    }
+  }
+}

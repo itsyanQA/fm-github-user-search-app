@@ -1,0 +1,75 @@
+@use "../../../../styles/mixins" as *;
+
+.user-general-info {
+  @include for-tablet-down {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  @include for-phone-only {
+    gap: 19px;
+  }
+
+  &__names-and-date {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include for-tablet-down {
+      flex-direction: column;
+    }
+  }
+
+  &__names {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  &__title {
+    @include h1;
+    color: var(--text-color-3);
+
+    @include for-phone-only {
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
+
+  &__username {
+    color: var(--blue-primary);
+    cursor: pointer;
+
+    &:link {
+      text-decoration: none;
+    }
+
+    @include for-phone-only {
+      font-size: 13px;
+    }
+  }
+
+  &__date {
+    color: var(--text-color-1);
+    line-height: 40px;
+
+    @include for-tablet-down {
+      line-height: 30px;
+    }
+
+    @include for-phone-only {
+      font-size: 13px;
+      line-height: 25px;
+    }
+  }
+
+  &__avatar {
+    display: none;
+
+    @include for-tablet-down {
+      display: block;
+    }
+  }
+}

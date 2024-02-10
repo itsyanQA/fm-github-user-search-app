@@ -1,0 +1,18 @@
+@use "../../../../styles/mixins" as *;
+
+.user-external-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  @include for-phone-only {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__link-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

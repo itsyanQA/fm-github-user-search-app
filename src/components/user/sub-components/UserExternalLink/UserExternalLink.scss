@@ -1,0 +1,22 @@
+.user-external-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  & g,
+  & path {
+    fill: var(--text-color-2);
+  }
+
+  &--not-available {
+    opacity: 50%;
+  }
+
+  &__text {
+    color: var(--text-color-2);
+  }
+
+  & a:link {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,16 @@
+@use "../../styles/mixins" as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__title {
+    @include h1;
+    color: var(--h1);
+  }
+
+  @include for-phone-only {
+    margin-bottom: 10px;
+  }
+}

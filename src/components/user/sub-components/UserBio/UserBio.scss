@@ -1,0 +1,10 @@
+@use "../../../../styles/mixins" as *;
+
+.user-bio {
+  color: var(--text-color-2);
+  @include body;
+
+  &--no-bio {
+    opacity: 75%;
+  }
+}

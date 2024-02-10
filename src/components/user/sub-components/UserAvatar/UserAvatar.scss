@@ -1,0 +1,13 @@
+@use "../../../../styles/mixins" as *;
+
+.user-avatar {
+  object-fit: cover;
+  width: 117px;
+  height: 117px;
+  border-radius: 100%;
+
+  @include for-phone-only {
+    width: 70px;
+    height: 70px;
+  }
+}
