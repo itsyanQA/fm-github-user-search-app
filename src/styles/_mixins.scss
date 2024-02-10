@@ -1,0 +1,46 @@
+@use "./breakpoints" as *;
+
+@mixin h1 {
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 38px;
+}
+
+@mixin h2 {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 33px;
+}
+
+@mixin h3 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin h4 {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+@mixin body {
+  font-size: 15px;
+  line-height: 25px;
+}
+
+@mixin for-phone-only {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-only {
+  @media (min-width: $mobile-bp) and (max-width: $tablet-bp) {
+    @content;
+  }
+}
+
+@mixin for-tablet-down {
+  @media (max-width: $tablet-bp) {
+    @content;
+  }
+}
