@@ -2,7 +2,7 @@ import "./UserExtraInfoItem.scss";
 
 export type UserExtraInfoItemProps = {
   label: string;
-  info: string | undefined;
+  info: string | number | undefined;
 };
 
 export function UserExtraInfoItem({ label, info }: UserExtraInfoItemProps) {
