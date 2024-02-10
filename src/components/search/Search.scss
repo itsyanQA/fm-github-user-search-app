@@ -47,6 +47,10 @@
 
     &::placeholder {
       color: var(--text-color-2);
+
+      @include for-phone-only {
+        font-size: 10px;
+      }
     }
 
     &:focus {
