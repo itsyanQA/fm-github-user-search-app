@@ -23,6 +23,7 @@ export function Search() {
           onKeyDown={(e) => {
             if (e.key === "Enter" && !!searchValue) {
               setDidSubmit((prevState) => !prevState);
+              inputRef?.current?.blur();
             }
           }}
         />
