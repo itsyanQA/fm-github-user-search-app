@@ -12,7 +12,7 @@ export function Search() {
         <input
           className="search__input"
           type="text"
-          placeholder="Search GitHub username..."
+          placeholder="Search GitHub username…"
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
           onKeyDown={(e) => {
