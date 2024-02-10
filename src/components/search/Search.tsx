@@ -21,7 +21,7 @@ export function Search() {
             setSearchValue(e.target.value);
           }}
           onKeyDown={(e) => {
-            if (e.key === "Enter") {
+            if (e.key === "Enter" && !!searchValue) {
               setDidSubmit((prevState) => !prevState);
             }
           }}
