@@ -13,17 +13,12 @@ export function UserExternalLinks() {
     <div className="user-external-links">
       <div className="user-external-links__link-group">
         <UserExternalLink Icon={<LocationIcon />} info={userData?.location} />
-        <UserExternalLink Icon={<WebsiteIcon />} info={userData?.blog} isExternalLink={!!userData?.blog} externalLinkType="WEBSITE" />
+        <UserExternalLink Icon={<WebsiteIcon />} info={userData?.blog} externalLinkType="WEBSITE" />
       </div>
 
       <div className="user-external-links__link-group">
-        <UserExternalLink
-          Icon={<TwitterIcon />}
-          info={userData?.twitterUsername}
-          isExternalLink={!!userData?.blog}
-          externalLinkType="TWITTER"
-        />
-        <UserExternalLink Icon={<CompanyIcon />} info={userData?.company} isExternalLink={!!userData?.blog} externalLinkType="COMPANY" />
+        <UserExternalLink Icon={<TwitterIcon />} info={userData?.twitterUsername} externalLinkType="TWITTER" />
+        <UserExternalLink Icon={<CompanyIcon />} info={userData?.company} externalLinkType="COMPANY" />
       </div>
     </div>
   );
