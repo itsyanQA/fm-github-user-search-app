@@ -1,9 +1,11 @@
 import "./Search.scss";
 import SearchIcon from "../../assets/icon-search.svg?react";
 import { useSearchContext } from "../../context/SearchContextProvider";
+import { useRef } from "react";
 
 export function Search() {
   const { searchValue, setSearchValue, setDidSubmit, userData, isFetching } = useSearchContext();
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   return (
     <div className="search">
@@ -12,9 +14,12 @@ export function Search() {
         <input
           className="search__input"
           type="text"
+          ref={inputRef}
           placeholder="Search GitHub username…"
           value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
+          onChange={(e) => {
+            setSearchValue(e.target.value);
+          }}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               setDidSubmit((prevState) => !prevState);
@@ -29,6 +34,7 @@ export function Search() {
           onClick={() => {
             if (searchValue) {
               setDidSubmit((prevState) => !prevState);
+              inputRef?.current?.blur();
             }
           }}
           disabled={!searchValue}
