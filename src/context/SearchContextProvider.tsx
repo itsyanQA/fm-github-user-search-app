@@ -5,8 +5,6 @@ import { User } from "../types/types";
 type SearchContextType = {
   searchValue: string;
   setSearchValue: Dispatch<SetStateAction<string>>;
-  didSubmit: boolean;
-  setDidSubmit: Dispatch<SetStateAction<boolean>>;
   userData: User | null;
   isFetching: boolean;
   error: Error | null;
@@ -18,15 +16,9 @@ type SearchContextProviderProps = PropsWithChildren;
 
 export function SearchContextProvider({ children }: SearchContextProviderProps) {
   const [searchValue, setSearchValue] = useState<string>("Octocat");
-  const [didSubmit, setDidSubmit] = useState<boolean>(false);
-  const { isFetching, error, data: userData } = useFetchUser(didSubmit, searchValue);
-  console.log({ userData });
+  const { isFetching, error, data: userData } = useFetchUser(searchValue);
 
-  return (
-    <SearchContext.Provider value={{ searchValue, setSearchValue, didSubmit, setDidSubmit, isFetching, userData, error }}>
-      {children}
-    </SearchContext.Provider>
-  );
+  return <SearchContext.Provider value={{ searchValue, setSearchValue, isFetching, userData, error }}>{children}</SearchContext.Provider>;
 }
 
 export const useSearchContext = () => {
@@ -39,8 +31,6 @@ export const useSearchContext = () => {
   return {
     searchValue: context.searchValue,
     setSearchValue: context.setSearchValue,
-    didSubmit: context.didSubmit,
-    setDidSubmit: context.setDidSubmit,
     userData: context.userData,
     isFetching: context.isFetching,
     error: context.error,
