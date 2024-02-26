@@ -8,6 +8,8 @@ export function Search() {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const handleSubmit = () => {
+    if (!inputRef?.current?.value) return;
+
     setSearchValue(inputRef?.current?.value ?? "");
     inputRef?.current?.blur();
   };
@@ -28,7 +30,7 @@ export function Search() {
           ref={inputRef}
           placeholder="Search GitHub username…"
           onKeyDown={(e) => {
-            if (e.key === "Enter" && !!searchValue) {
+            if (e.key === "Enter") {
               handleSubmit();
             }
           }}
